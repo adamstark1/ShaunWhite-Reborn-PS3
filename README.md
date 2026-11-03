@@ -1,0 +1,97 @@
+# Shaun White Reborn PS3
+> [!IMPORTANT]
+> This project brings back the "Generation 2.0" trophy for Shaun White Snowboarding.
+
+A cross-platform custom server and launcher to restore the Platinum trophy and the "Generation 2.0" trophy for **Shaun White Snowboarding** on the PlayStation 3 and RPCS3.
+
+|             BEFORE: Server Error              |             AFTER: Server Online             |
+|:---------------------------------------------:|:--------------------------------------------:|
+| <img src="Assets/sws-before.png" width="700"> | <img src="Assets/sws-after.png" width="700"> |
+
+
+These screenshots are from Shaun White Snowboarding using RPCS3.
+
+## Download
+**Please leave a star ⭐ if you found this repository helpful!**  
+📅 **TBD:** Release 1.0.0 is here!
+
+You can download the compiled versions for your operating system here:  
+**[Download Latest Release.](https://github.com/adamstark1/ShaunWhite-Reborn-PS3/releases)**
+
+|                  UI Screenshot                   |
+|:------------------------------------------------:|
+| <img src="Assets/sws-reborn-ui.png" width="500"> |
+
+## All Reborn Projects
+I managed to restore the Platinum trophies for these games with the help of some amazing people. Feel free to check them all out! :)
+- [inFAMOUS 2](https://github.com/adamstark1/inFAMOUS-Reborn-PS3)
+- [inFAMOUS: Festival of Blood](https://github.com/adamstark1/inFAMOUS-Reborn-PS3)
+- [Darksiders II](https://github.com/adamstark1/Darksiders2-Reborn-PS3)
+- [Saints Row: The Third](https://github.com/adamstark1/SaintsRow-Reborn-PS3)
+- [Saints Row IV](https://github.com/adamstark1/SaintsRow-Reborn-PS3)
+- [Shaun White Snowboarding](https://github.com/adamstark1/ShaunWhite-Reborn-PS3)
+
+
+## How to Run
+> [!NOTE]
+> The application was tested on Windows 11, macOS Tahoe and Ubuntu 22.04.
+### Windows
+1. Extract the downloaded `.zip` file or compile it yourself with `Compilers/build_windows.sh` (use [Git Bash](https://git-scm.com/install/) terminal).
+2. Run `ShaunWhiteReborn.Launcher.exe`.
+
+### macOS
+1. Extract the downloaded `.zip` file or compile it yourself with `Compilers/build_mac_silicon.sh` or `Compilers/build_mac_intel.sh`.
+2. Double-click the `Shaun White Reborn.app` bundle. 
+
+### Linux
+1. Extract the downloaded `.zip` file or compile it yourself with `Compilers/build_linux.sh` and run `install.sh`.
+2. Run `Shaun White Reborn` from application menu. 
+
+
+## Setup Instructions
+
+1. **Clear Ports:** Click the button in the Launcher to free Port 443 and Port 8443 (HTTP). These are required for the application to intercept PS3 traffic.
+2. **PS3 Network Configuration:**
+   * On your PS3, go to **Settings > Network Settings > Internet Connection Settings**.
+   * Select **Custom**.
+   * Select **Wired Connection** or **Wireless**.
+   * Go through the settings normally until you reach **DNS Setting**.
+   * Select **Manual**.
+   * Enter the IP address shown in the Launcher as your **Primary DNS**.
+   * Leave the **Secondary DNS** blank (or `0.0.0.0`).
+   * Save settings and test the connection.
+4. **Optional Step:** Open the **Internet Browser** on your PS3 and head to http://ps3webauth.ubi.com/. If you see my message, you're perfectly set.
+5. **Start Server:** Once the DNS is set, click "Start Server" and wait for the timer to end or leave a ⭐ and you'll gain access instantly. The terminal will display your local IP address. Boot the game.
+
+
+## Sponsors and Contributors
+I'd like to give a huge thank you to everyone who helped with this repository. This projects improves overtime thanks to you!
+
+❤️ **Sponsors:** -  
+🛠️ **Troubleshooting:** -
+
+You can support my coding journey and revival projects on [GitHub Sponsors](https://github.com/sponsors/adamstark1).
+
+## Troubleshooting
+
+>**"Port 443 or Port 8443 in use / Server fails to start"**  
+If the built-in port clearer fails, manually kill the conflicting processes:
+- **macOS:** Open Terminal and run `sudo kill -9 $(sudo lsof -t -i :443 -i :8443)`.
+- **Linux:** Open Terminal and run `sudo fuser -k 443/tcp 8443/tcp`.
+- **Windows:** Open Command Prompt as Administrator and run `for /f "tokens=5" %a in ('netstat -aon ^| findstr :443 ^| findstr LISTENING') do taskkill /f /pid %a`, then repeat for `:8443`.
+
+Executing these commands will free up the necessary ports, and the Launcher will function properly.
+
+>**"Permission denied for compiler .sh scripts"**  
+Adjust permissions for these files manually:
+* **macOS (Intel):** use `chmod +x build_mac_intel.sh` in Terminal.
+* **macOS (Silicon):** use `chmod +x build_mac_silicon.sh` in Terminal.
+* **Linux:** use `chmod +x build_linux.sh` in Terminal.
+* **Windows:** use `chmod +x build_windows.sh` in Git Bash terminal.
+
+>**"[DNS] Error: Permission denied" (macOS)**  
+macOS requires administrator privileges to open the specific network ports used by the game (Ports 53, 443, and 8443). Fix it by using the following command:
+* Open **Terminal** in the same folder as your .app bundle and run `sudo "Shaun White Reborn.app/Contents/MacOS/ShaunWhiteReborn.Launcher"`.
+
+## Tech Stack
+TBD
