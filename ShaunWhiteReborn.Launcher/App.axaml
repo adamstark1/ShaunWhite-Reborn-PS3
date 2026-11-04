@@ -1,10 +1,9 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             Name="Darksiders II Reborn"
+             Name="Shaun White Reborn"
              x:Class="ShaunWhiteReborn.Launcher.App"
              xmlns:local="using:ShaunWhiteReborn.Launcher"
              RequestedThemeVariant="Default">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.DataTemplates>
         <local:ViewLocator />

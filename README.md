@@ -8,7 +8,6 @@ A cross-platform custom server and launcher to restore the Platinum trophy and t
 |:---------------------------------------------:|:--------------------------------------------:|
 | <img src="Assets/sws-before.png" width="700"> | <img src="Assets/sws-after.png" width="700"> |
 
-
 These screenshots are from Shaun White Snowboarding using RPCS3.
 
 ## Download
@@ -65,7 +64,7 @@ I managed to restore the Platinum trophies for these games with the help of some
 
 
 ## Sponsors and Contributors
-I'd like to give a huge thank you to everyone who helped with this repository. This projects improves overtime thanks to you!
+I'd like to give a huge thank you to everyone who helped with this repository. This projects improves overtime thanks to you! Special thanks to [elliot1377](elliot1377/mw2-ps3-server) for their Demonware documentation.
 
 ❤️ **Sponsors:** -  
 🛠️ **Troubleshooting:** -

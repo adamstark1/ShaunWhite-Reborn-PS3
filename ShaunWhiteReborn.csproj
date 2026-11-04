@@ -5,11 +5,9 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <NoWarn>$(NoWarn);SYSLIB0039</NoWarn>
-    <Nullable>disable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
     <PackageReference Include="DNS" Version="*" />
   </ItemGroup>
 
@@ -26,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Hydra\Models\" />
+    <EmbeddedResource Include="Services\Demonware\tiger_sboxes.bin" />
   </ItemGroup>
-  
+
 </Project>

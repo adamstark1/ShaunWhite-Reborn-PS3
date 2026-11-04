@@ -8,12 +8,10 @@ obj/
 .DS_Store
 *.DS_Store
 
-Saints Row Reborn.app/
-Saints Row Reborn Windows/
-Saints Row Reborn Linux/
+Shaun White Reborn.app/
+Shaun White Reborn Windows/
+Shaun White Reborn Linux/
 ReleaseBuild/
-Characters/*
-!Characters/.gitkeep
 temp_*/
 *.zip
 dumps/
