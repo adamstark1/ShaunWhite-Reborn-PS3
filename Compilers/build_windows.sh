@@ -11,8 +11,8 @@ echo "Compiling Windows build for version $VERSION..."
 rm -rf "$OUT_DIR"
 mkdir -p "$OUT_DIR"
 
-dotnet publish ShaunWhiteReborn.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:UseAppHost=true -p:ApplicationIcon=$ICON_PATH -o "$OUT_DIR"
-dotnet publish ShaunWhiteReborn.Launcher/ShaunWhiteReborn.Launcher.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:UseAppHost=true -p:ApplicationIcon=$ICON_PATH -o "$OUT_DIR"
+dotnet publish ShaunWhiteReborn.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:UseAppHost=true -p:DebugType=None -p:Version=$VERSION -p:ApplicationIcon=$ICON_PATH -o "$OUT_DIR"
+dotnet publish ShaunWhiteReborn.Launcher/ShaunWhiteReborn.Launcher.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -p:UseAppHost=true -p:DebugType=None -p:Version=$VERSION -p:ApplicationIcon=$ICON_PATH -o "$OUT_DIR"
 
 echo "Deleting unnecessary files..."
 

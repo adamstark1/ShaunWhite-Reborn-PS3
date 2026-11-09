@@ -12,7 +12,7 @@ These screenshots are from Shaun White Snowboarding using RPCS3.
 
 ## Download
 **Please leave a star ⭐ if you found this repository helpful!**  
-📅 **TBD:** Release 1.0.0 is here!
+📅 **09/11/2026:** Release 1.0.0 is here!
 
 You can download the compiled versions for your operating system here:  
 **[Download Latest Release.](https://github.com/adamstark1/ShaunWhite-Reborn-PS3/releases)**
@@ -64,7 +64,7 @@ I managed to restore the Platinum trophies for these games with the help of some
 
 
 ## Sponsors and Contributors
-I'd like to give a huge thank you to everyone who helped with this repository. This projects improves overtime thanks to you! Special thanks to [elliot1377](elliot1377/mw2-ps3-server) for their Demonware documentation.
+I'd like to give a huge thank you to everyone who helped with this repository. This projects improves overtime thanks to you! Special thanks to [elliot1377](https://github.com/elliot1377/mw2-ps3-server) for their Demonware documentation.
 
 ❤️ **Sponsors:** -  
 🛠️ **Troubleshooting:** -
@@ -93,4 +93,20 @@ macOS requires administrator privileges to open the specific network ports used 
 * Open **Terminal** in the same folder as your .app bundle and run `sudo "Shaun White Reborn.app/Contents/MacOS/ShaunWhiteReborn.Launcher"`.
 
 ## Tech Stack
-TBD
+
+![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
+![.NET Core](https://img.shields.io/badge/.NET_8-5C2D91?style=for-the-badge&logo=.net&logoColor=white)
+![Avalonia UI](https://img.shields.io/badge/Avalonia_UI-844FBA?style=for-the-badge)
+![macOS](https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white)
+![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Ghidra](https://img.shields.io/badge/Ghidra-E93C30?style=for-the-badge)
+![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
+
+- **Backend:** ASP.NET Core (Kestrel web server) handling HTTP/HTTPS traffic across Ports 80, 443, 3074, and 8443 for Ubisoft GameConnect configuration, UTS telemetry, and Gator WCF/SOAP services.
+- **DemonWare Protocol Server:** Custom TCP server on Ports 3078 (Authentication) and 3036 (Lobby) implementing PSN/RPCN ticket parsing, bit-packed `bdBitBuffer` serialization, and 3DES-CBC + Tiger-192 session cryptography.
+- **Gator UGC Emulation:** WCF/SOAP and MTOM (`multipart/related`) endpoint emulation for user authentication, field schema definitions, slot queries, and replay video uploads.
+- **Frontend:** Custom Launcher using Avalonia UI.
+- **DNS Routing:** Custom DNS proxy handling UDP Port 53 traffic to intercept and reroute legacy Ubisoft and Gator domains to the local host.
+- **Reverse Engineering:** Ghidra utilized for analyzing the PS3 `EBOOT.BIN` binary to reconstruct the Gator SOAP XML parsers, field attribute schemas, and upload states.
+- **Authentication:** GitHub Device Flow API integrated for repository star verification to bypass wait timers.

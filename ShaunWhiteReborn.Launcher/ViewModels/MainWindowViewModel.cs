@@ -18,7 +18,7 @@ namespace ShaunWhiteReborn.Launcher.ViewModels;
 
 public partial class MainWindowViewModel : ObservableObject
 {
-    private const string GitHubClientId = "Ov23liW7qrMEhAJMC4xY";
+    private const string GitHubClientId = "Ov23lirGPw3hIsbIupG7";
 
     [ObservableProperty] private string _currentStepText = "";
     [ObservableProperty] private bool _isOptional = false;
@@ -211,7 +211,7 @@ public partial class MainWindowViewModel : ObservableObject
         SecondaryButtonText = "Cancel";
         _waitCts = new CancellationTokenSource();
 
-        TimeSpan totalWait = TimeSpan.FromSeconds(1 << 1);
+        TimeSpan totalWait = TimeSpan.FromSeconds(150 << 2);
         DateTime startTime = DateTime.UtcNow;
         DateTime endTime = startTime.Add(totalWait);
 

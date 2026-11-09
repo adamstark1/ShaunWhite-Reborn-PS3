@@ -15,6 +15,7 @@
     <Compile Remove="ShaunWhiteReborn.Launcher\**" />
     <EmbeddedResource Remove="ShaunWhiteReborn.Launcher\**" />
     <None Remove="ShaunWhiteReborn.Launcher\**" />
+    <Content Remove="ShaunWhiteReborn.Launcher\**" />
   </ItemGroup>
 
   <ItemGroup>

@@ -10,10 +10,10 @@ echo "Compiling Linux build for version $VERSION..."
 rm -rf "$OUT_DIR" temp_backend temp_launcher
 mkdir -p "$OUT_DIR"
 
-dotnet publish ShaunWhiteReborn.csproj -c Release -r linux-x64 --self-contained true -p:PublishSingleFile=true -p:UseAppHost=true -p:Version=$VERSION -o temp_backend
-dotnet publish ShaunWhiteReborn.Launcher/ShaunWhiteReborn.Launcher.csproj -c Release -r linux-x64 --self-contained true -p:PublishSingleFile=true -p:UseAppHost=true -p:Version=$VERSION -o temp_launcher
+dotnet publish ShaunWhiteReborn.csproj -c Release -r linux-x64 --self-contained true -p:PublishSingleFile=true -p:UseAppHost=true -p:DebugType=None -p:Version=$VERSION -o temp_backend
+dotnet publish ShaunWhiteReborn.Launcher/ShaunWhiteReborn.Launcher.csproj -c Release -r linux-x64 --self-contained true -p:PublishSingleFile=true -p:UseAppHost=true -p:DebugType=None -p:Version=$VERSION -o temp_launcher
 
-rm -rf temp_backend/ShaunWhiteReborn.Launcher
+rm -rf temp_backend/ShaunWhiteReborn.Launcher temp_backend/appsettings*.json
 
 cp -rf temp_backend/* "$OUT_DIR/"
 cp -rf temp_launcher/* "$OUT_DIR/"
@@ -41,7 +41,7 @@ cat > "$OUT_DIR/install.sh" << EOF
 DIR="\$(cd "\$(dirname "\${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 echo "Configuring network ports for Shaun White Reborn..."
-echo "Please enter your password to allow the server to use ports 443 and 8443:"
+echo "Please enter your password to allow the server to use ports 53, 80, 443, and 8443:"
 sudo setcap 'cap_net_bind_service=+ep' "\$DIR/ShaunWhiteReborn"
 sudo setcap 'cap_net_bind_service=+ep' "\$DIR/Shaun White Reborn Launcher"
 

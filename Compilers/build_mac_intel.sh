@@ -8,8 +8,10 @@ echo "Compiling macOS Intel (osx-x64) build for version $VERSION..."
 
 rm -rf "Shaun White Reborn.app" ./temp_backend ./temp_launcher
 
-dotnet publish ShaunWhiteReborn.csproj -c Release -r osx-x64 --self-contained true -p:UseAppHost=true -p:Version=$VERSION -o ./temp_backend
-dotnet publish ShaunWhiteReborn.Launcher/ShaunWhiteReborn.Launcher.csproj -c Release -r osx-x64 --self-contained true -p:UseAppHost=true -p:Version=$VERSION -o ./temp_launcher
+dotnet publish ShaunWhiteReborn.csproj -c Release -r osx-x64 --self-contained true -p:UseAppHost=true -p:DebugType=None -p:Version=$VERSION -o ./temp_backend
+dotnet publish ShaunWhiteReborn.Launcher/ShaunWhiteReborn.Launcher.csproj -c Release -r osx-x64 --self-contained true -p:UseAppHost=true -p:DebugType=None -p:Version=$VERSION -o ./temp_launcher
+
+rm -rf ./temp_backend/ShaunWhiteReborn.Launcher ./temp_backend/appsettings*.json
 
 mkdir -p "Shaun White Reborn.app/Contents/MacOS"
 mkdir -p "Shaun White Reborn.app/Contents/Backend"
